@@ -528,4 +528,4 @@ def __kill_thread(thread, _):
     :return:
     """
     thread.exit()
-    logger.info("\nShyhook server thread was killed")
+    logger.info("\nSkyhook server thread was killed")
