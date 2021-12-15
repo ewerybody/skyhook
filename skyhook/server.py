@@ -356,8 +356,6 @@ class SkyHookHTTPRequestHandler(BaseHTTPRequestHandler):
     it can call the Server functions after it has processed the request.
 
     """
-    skyhook_server: Server # for PyCharm autocomplete
-
     def __init__(self, request, client_address, server, skyhook_server=None):
         self.skyhook_server = skyhook_server
         super().__init__(request, client_address, server)
