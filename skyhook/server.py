@@ -541,7 +541,13 @@ def start_python_thread_server(host_program="", port=None, load_modules=[], echo
     :return: *Server*
     """
     if host_program != "":
-        port = getattr(Ports, host_program)
+        try:
+            port = getattr(Ports, host_program)
+        except AttributeError:
+            pass
+
+    if port is None:
+        port = Ports.undefined
 
     if port_in_use(port):
         logger.error(f"Port {port} is already in use, can't start server")
